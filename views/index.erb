@@ -1,5 +1,9 @@
 <div class="horoscope">
-  You will have a day full of <%= @prediction %>.
+  You will have a day full of <a href="http://en.wikipedia.org/?curid=<%= @id %>"><%= @prediction %></a>.
+  <form method="post" action="status">
+    <input name="status" value="You will have a day full of <%= @prediction %>! Learn more at http://en.wikipedia.org/?curid=<%= @id %>.">
+    <button type="submit">Tweet my prediction!</button>
+  </form>
   <p>
     <a href="/">Try again</a>
   </p>
