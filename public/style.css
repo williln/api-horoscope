@@ -5,8 +5,8 @@ body {
 }
 
 .horoscope {
-  width: 400px;
-  height: 200px;
+  width: 600px;
+  height: 300px;
   border-style: dotted;
   border-width: 3px;
   border-color: #ffffff;
