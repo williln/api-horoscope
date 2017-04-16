@@ -1,10 +1,24 @@
 <div class="horoscope">
-  You will have a day full of <a href="http://en.wikipedia.org/?curid=<%= @id %>"><%= @prediction %></a>.
+  You will have a day full of 
+    <% if @id %>
+      <a href="http://en.wikipedia.org/?curid=<%= @id %>"><%= @prediction %></a>!
+    <% else %>
+        <%= @prediction %>!
+    <% end %>
   <form method="post" action="status">
-    <input name="status" value="You will have a day full of <%= @prediction %>! Learn more at http://en.wikipedia.org/?curid=<%= @id %>.">
+      <input name="status" size="40"
+        <% if @id %>
+            value="You will have a day full of <%= @prediction %>! Learn more at http://en.wikipedia.org/?curid=<%= @id %>."
+        <% else %>
+            value="🔮 You will have a day full of <%= @prediction %><%= @prediction %><%= @prediction %>!"
+        <% end %>
+        >
     <button type="submit">Tweet my prediction!</button>
   </form>
   <p>
-    <a href="/">Try again</a>
+    <a href="/">See your random Wikipedia horoscope</a>
+  </p>
+  <p>
+    <a href="/emoji">See your 🔮 emoji horoscope!</a>
   </p>
 </div>
