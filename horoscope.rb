@@ -11,6 +11,11 @@ get '/' do
   erb :index
 end
 
+get '/emoji' do
+  @prediction = ['🍰', '💔', '💪', '🏆', '🐷', '🍕', '🤖'].sample
+  erb :index
+end
+
 post '/status' do
   consumer = OAuth::Consumer.new(ENV['API_KEY'], ENV['API_SECRET'], { site: "https://api.twitter.com", scheme: 'header' })
   token_hash = { oauth_token: ENV['ACCESS_TOKEN'], oauth_token_secret: ENV['ACCESS_TOKEN_SECRET'] }
